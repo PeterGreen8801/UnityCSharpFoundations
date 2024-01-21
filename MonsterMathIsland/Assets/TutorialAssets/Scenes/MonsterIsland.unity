@@ -6047,4 +6047,5 @@ MonoBehaviour:
   - {fileID: 9025218493570264906, guid: 7dfe0033d69f26a40bfc3e8be0168d8e, type: 3}
   - {fileID: 6499932836255068575, guid: 112db78087262174d8664d2737c85433, type: 3}
   - {fileID: 1261450681569449698, guid: ff68b1939168992449c0a5e0444cdf8a, type: 3}
+  waveDifficulty: 0
   monsters: []

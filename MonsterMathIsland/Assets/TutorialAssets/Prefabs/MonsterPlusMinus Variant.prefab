@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterPlusMinus Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4427929725429584440, guid: 33d500cd999aa164caf34551fc47935a, type: 3}
+      propertyPath: points
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d500cd999aa164caf34551fc47935a, type: 3}
 --- !u!4 &9025218493570264904 stripped
