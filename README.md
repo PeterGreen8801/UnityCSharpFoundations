@@ -3,7 +3,7 @@
 We’re on the verge of a new industry. VR and AR developers cannot rely on drag-and-drop tools yet – but need to hardcode their applications. As VR/AR is mostly uncovered territory, you will need to showcase your curiosity, your willingness to deep-dive into coding problems, and your determination to stand up again after 100 failures.
 
 # Chapter 1 - Intro to C#
-## Essential
+## Essentials
 ### How to Debug
 #### How to debug a problem
 
@@ -207,12 +207,7 @@ https://docs.unity3d.com/ScriptReference/Random.html
 
 ### Relational Operators
 
-#### Definition
-
-Following table shows all the relational operators supported by C#
-Operator
-Name
-Description
+#### Following table shows all the relational operators supported by C# Operator Name Description
 ==
 Equal
 Checks if the values of two operands are equal or not, if yes then condition becomes true.
@@ -232,3 +227,15 @@ Checks if the value of left operand is greater than or equal to the value of rig
 <=
 More or equal than
 Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+
+# Chapter 2 - Advanced Logic
+## Essentials
+### Enumerations (Enums)
+### Data Containers (Arrays and Collections)
+### Hierarchies transforms and parenting
+### Generic Lists <T>
+### Methods
+
+## Additional Knowledge
+### For Loops
+### <Generics>
