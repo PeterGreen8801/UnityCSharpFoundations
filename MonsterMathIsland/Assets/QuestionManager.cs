@@ -14,6 +14,17 @@ public class QuestionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GenerateQuestion();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void GenerateQuestion()
+    {
         //FInd random numbers for operand
         int operand1 = Random.Range(1, 100);
         int operand2 = Random.Range(1, 100);
@@ -35,31 +46,27 @@ public class QuestionManager : MonoBehaviour
 
         _messageBoxTextField.text = question;
 
-        _answerInputField.Select();
+        ClearInputField();
+    }
 
-
-        int rando1 = Random.Range(1, 100);
-        Debug.Log(rando1);
-        int rando2 = Random.Range(1, 100);
-        Debug.Log(rando2);
-
-        if (rando1 < rando2)
+    public void ValidateAnswer()
+    {
+        if (_answerInputField.text == answer.ToString())
         {
-            Debug.Log(rando1 + " is less than " + rando2);
-        }
-        else if (rando2 == rando1)
-        {
-            Debug.Log(rando1 + " is the same as " + rando2);
+            Debug.Log("Correct");
+            GenerateQuestion();
         }
         else
         {
-            Debug.Log(rando1 + " is more than " + rando2);
+            Debug.Log("Incorrect");
+            ClearInputField();
         }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ClearInputField()
     {
-
+        _answerInputField.text = "";
+        _answerInputField.ActivateInputField();
     }
 }
