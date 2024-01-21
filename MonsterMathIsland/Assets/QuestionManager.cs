@@ -8,7 +8,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private TMP_Text _messageBoxTextField;
     [SerializeField] private TMP_InputField _answerInputField;
 
-    string question;
+
     [SerializeField] int answer;
 
     // Start is called before the first frame update
@@ -17,36 +17,35 @@ public class QuestionManager : MonoBehaviour
         GenerateQuestion();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void GenerateQuestion()
     {
-        //FInd random numbers for operand
-        int operand1 = Random.Range(1, 100);
-        int operand2 = Random.Range(1, 100);
+        var qa = GenerateAddSubtract(1, 100);
 
+        _messageBoxTextField.text = qa.question;
+
+        ClearInputField();
+    }
+
+    //Example of requesting 2 return types
+    private (string question, int answer) GenerateAddSubtract(int min, int max)
+    {
+        int operand1 = Random.Range(min, max);
+        int operand2 = Random.Range(min, max);
+
+        string question = "";
         if (Random.value < 0.5f)
         {
-            Debug.Log("This is addition");
             question = $"{operand1} + {operand2} =";
-
             answer = operand1 + operand2;
         }
         else
         {
-            Debug.Log("This is subtraction");
             question = $"{operand1} - {operand2} =";
-
             answer = operand1 - operand2;
         }
 
-        _messageBoxTextField.text = question;
-
-        ClearInputField();
+        return (question, answer);
     }
 
     public void ValidateAnswer()
