@@ -6678,6 +6678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _messageBoxTextField: {fileID: 978072740}
+  _answerInputField: {fileID: 803896320}
+  answer: 0
 --- !u!4 &2131915560
 Transform:
   m_ObjectHideFlags: 0
