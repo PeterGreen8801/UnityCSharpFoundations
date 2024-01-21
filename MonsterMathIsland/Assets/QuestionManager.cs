@@ -7,6 +7,7 @@ public class QuestionManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text _messageBoxTextField;
     [SerializeField] private TMP_InputField _answerInputField;
+    [SerializeField] private MonsterManager _monsterManager;
 
 
     [SerializeField] int answer;
@@ -52,7 +53,10 @@ public class QuestionManager : MonoBehaviour
     {
         if (_answerInputField.text == answer.ToString())
         {
-            Debug.Log("Correct");
+
+            _monsterManager.KillMonster(0);
+            _monsterManager.MonsterAttacks(0);
+            _monsterManager.MoveNextMonsterToQueue();
             GenerateQuestion();
         }
         else

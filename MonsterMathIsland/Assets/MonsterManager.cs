@@ -25,6 +25,7 @@ public class MonsterManager : MonoBehaviour
         }
 
         MonsterAttacks(0);
+        MoveNextMonsterToQueue();
 
         waveDifficulty = CalculateWaveDifficulty();
     }
@@ -61,6 +62,29 @@ public class MonsterManager : MonoBehaviour
         monster.rotation = attackPoint.rotation;
     }
 
+    public void MoveMonsterToQueue(int monsterIndex)
+    {
+        if (monsters.Count <= monsterIndex)
+        {
+            return;
+        }
+
+        Transform monster = monsters[monsterIndex].transform;
+        monster.GetComponent<MonsterController>().ChangeState(MonsterState.Queue);
+        monster.position = queuePoint.position;
+        monster.rotation = queuePoint.rotation;
+    }
+
+    public void MoveNextMonsterToQueue()
+    {
+        MoveMonsterToQueue(1);
+    }
+
+    public void KillMonster(int monsterIndex)
+    {
+        Destroy(monsters[monsterIndex]);
+        monsters.RemoveAt(monsterIndex);
+    }
 
     // Update is called once per frame
     void Update()
