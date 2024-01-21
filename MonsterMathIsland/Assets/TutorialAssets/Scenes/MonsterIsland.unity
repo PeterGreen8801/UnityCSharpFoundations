@@ -3610,7 +3610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd7f736ed78244f48acae6f9557ec640, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd7f736ed78244f48acae6f9557ec640, type: 3}
@@ -4498,6 +4498,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c72f3f8a9daab2442b7dd148c087d333, type: 3}
+--- !u!1 &1587892473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1587892474}
+  m_Layer: 0
+  m_Name: MonsterAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1587892474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587892473}
+  m_LocalRotation: {x: 0.055791087, y: 0.40964785, z: -0.13367419, w: -0.9006704}
+  m_LocalPosition: {x: 1.4013631, y: 1.439, z: -4.376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1593422716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4934608945764068, guid: e896a7f6f83380b40972e13f5039022a, type: 3}
@@ -5909,6 +5939,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063162108}
   m_CullTransparentMesh: 1
+--- !u!1 &2091836879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2091836880}
+  m_Layer: 0
+  m_Name: MonsterQueuePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2091836880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091836879}
+  m_LocalRotation: {x: -0, y: -0.26490244, z: -0, w: 0.96427524}
+  m_LocalPosition: {x: 6.63, y: 0.28303528, z: -1.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: -30.722, z: 0}
 --- !u!1001 &2117951490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6043,6 +6103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountOfMonsters: 10
   monsterSpawnPoint: {fileID: 14171747}
+  attackPoint: {fileID: 1587892474}
+  queuePoint: {fileID: 2091836880}
   monsterPrefabs:
   - {fileID: 9025218493570264906, guid: 7dfe0033d69f26a40bfc3e8be0168d8e, type: 3}
   - {fileID: 6499932836255068575, guid: 112db78087262174d8664d2737c85433, type: 3}

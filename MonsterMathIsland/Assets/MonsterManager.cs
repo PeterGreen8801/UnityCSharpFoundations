@@ -1,25 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TutorialAssets.Scripts;
 using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
 {
     [SerializeField] private int amountOfMonsters = 10;
     [SerializeField] Transform monsterSpawnPoint;
+    [SerializeField] Transform attackPoint;
+
+    [SerializeField] Transform queuePoint;
+
     [SerializeField] private GameObject[] monsterPrefabs;
     [SerializeField] float waveDifficulty;
 
     public List<GameObject> monsters;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < amountOfMonsters; i++)
         {
-            int monsterIndex = Random.Range(0, monsterPrefabs.Length);
-            GameObject monster = Instantiate(monsterPrefabs[monsterIndex], monsterSpawnPoint.position, monsterSpawnPoint.rotation);
-            monsters.Add(monster);
+            InstantiateMonster();
         }
+
+        MonsterAttacks(0);
 
         waveDifficulty = CalculateWaveDifficulty();
     }
@@ -35,6 +40,27 @@ public class MonsterManager : MonoBehaviour
         difficulty /= (amountOfMonsters * 3);
         return difficulty;
     }
+
+    private void InstantiateMonster()
+    {
+        int monsterIndex = Random.Range(0, monsterPrefabs.Length);
+        GameObject monster = Instantiate(monsterPrefabs[monsterIndex], monsterSpawnPoint.position, monsterSpawnPoint.rotation);
+        monsters.Add(monster);
+    }
+
+    public void MonsterAttacks(int monsterIndex)
+    {
+        if (monsters.Count <= monsterIndex)
+        {
+            return;
+        }
+
+        Transform monster = monsters[monsterIndex].transform;
+        monster.GetComponent<MonsterController>().ChangeState(MonsterState.Attack);
+        monster.position = attackPoint.position;
+        monster.rotation = attackPoint.rotation;
+    }
+
 
     // Update is called once per frame
     void Update()
