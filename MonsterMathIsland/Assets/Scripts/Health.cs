@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -11,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Transform _healthBarUI;
 
     public int maxHp = 150;
+    public UnityEvent onDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +26,17 @@ public class Health : MonoBehaviour
 
         if (_hp <= 0)
         {
+            UpdateHealthBarUI();
             _hp = 0;
+            onDeath.Invoke();
+            return;
         }
+        UpdateHealthBarUI();
+    }
+
+    public void SetHealthBar(Transform healthBarUI)
+    {
+        _healthBarUI = healthBarUI;
         UpdateHealthBarUI();
     }
 
