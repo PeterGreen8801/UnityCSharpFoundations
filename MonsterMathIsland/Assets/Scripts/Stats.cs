@@ -25,6 +25,7 @@ public class Stats : MonoBehaviour
     void Start()
     {
         CalculateStats();
+        exp = prevLvUp;
     }
 
     private void CalculateStats()
@@ -34,6 +35,21 @@ public class Stats : MonoBehaviour
         maxHp = baseMaxHp + ((int)Mathf.Pow(level, 1.2f) * 10) * (int)Random.Range(0, 10);
         attack = baseAttack + (int)Mathf.Pow(level, 1.15f);
         defense = baseDefense + (int)Mathf.Pow(level, 1.15f);
+    }
+
+    public void GainExperience(int amount)
+    {
+        exp += amount;
+        if (exp > nextLvUp)
+        {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        level++;
+        CalculateStats();
     }
 
     // Update is called once per frame

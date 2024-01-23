@@ -118,6 +118,8 @@ public class QuestionManager : MonoBehaviour
             int damage = monsterHealth.CalculateDamage(playerStats, monsterStats);
             monsterHealth.TakeDamage(damage);
 
+            playerStats.GainExperience(monsterStats.exp);
+
             _timer.StopTimer();
             _timer.StartTimer();
             GenerateQuestion();
@@ -132,6 +134,8 @@ public class QuestionManager : MonoBehaviour
             _answerInputField.ActivateInputField();
         }
     }
+
+
 
     private void ClearInputField(string placeholderText)
     {
