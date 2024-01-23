@@ -5950,6 +5950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1902519398}
   - component: {fileID: 1902519397}
+  - component: {fileID: 1902519399}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5972,6 +5973,9 @@ MonoBehaviour:
   _hp: 150
   _healthBarUI: {fileID: 3019135285225397601}
   maxHp: 150
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1902519398
 Transform:
   m_ObjectHideFlags: 0
@@ -5986,6 +5990,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902519399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902519396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d195852ec8bc2f49afc4daea2ffa5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  exp: 0
+  baseMaxHp: 54
+  baseAttack: 10
+  baseDefense: 10
+  maxHp: 0
+  attack: 0
+  defense: 0
 --- !u!1 &1906398165
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +6935,7 @@ MonoBehaviour:
   _answerPlaceholderText: {fileID: 1418198855}
   _monsterManager: {fileID: 2125828682}
   _answer: 0
+  _player: {fileID: 1902519396}
 --- !u!4 &2125828681
 Transform:
   m_ObjectHideFlags: 0
@@ -6946,6 +6971,7 @@ MonoBehaviour:
   - {fileID: 862780739641630261, guid: a323c30d32e1c91469329676bbc4fc86, type: 3}
   - {fileID: 4948317317278911379, guid: 7166e0f8d6188b64793e7f61a42a4130, type: 3}
   waveDifficulty: 0
+  _healthBarUI: {fileID: 2848795563805304708}
   _monsters: []
 --- !u!222 &1175700404763933144
 CanvasRenderer:

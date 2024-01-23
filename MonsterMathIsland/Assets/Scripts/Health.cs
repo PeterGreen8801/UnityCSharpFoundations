@@ -34,6 +34,11 @@ public class Health : MonoBehaviour
         UpdateHealthBarUI();
     }
 
+    public int CalculateDamage(Stats attacker, Stats defender)
+    {
+        return Mathf.Max(1, attacker.attack - defender.defense);
+    }
+
     public void SetHealthBar(Transform healthBarUI)
     {
         _healthBarUI = healthBarUI;

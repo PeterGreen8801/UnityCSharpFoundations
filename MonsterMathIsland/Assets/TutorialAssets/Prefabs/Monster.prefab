@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1949332801673539205}
   - component: {fileID: 1949332801673539203}
   - component: {fileID: 230869719637996866}
+  - component: {fileID: 3700693712920541114}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -90,3 +91,23 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3700693712920541114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949332801673539206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d195852ec8bc2f49afc4daea2ffa5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  exp: 0
+  baseMaxHp: 54
+  baseAttack: 8
+  baseDefense: 5
+  maxHp: 0
+  attack: 0
+  defense: 0

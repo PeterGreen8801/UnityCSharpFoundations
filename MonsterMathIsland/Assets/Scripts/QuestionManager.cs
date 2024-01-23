@@ -98,6 +98,9 @@ public class QuestionManager : MonoBehaviour
 
     public void CheckAnswerCorrect()
     {
+        Stats playerStats = _player.GetComponent<Stats>();
+        Stats monsterStats = _monsterManager._monsters[0].GetComponent<Stats>();
+
         if (_answerInputField.text == _answer.ToString())
         {
             /*
@@ -107,13 +110,15 @@ public class QuestionManager : MonoBehaviour
             */
 
             Health monsterHealth = _monsterManager._monsters[0].GetComponent<Health>();
-            monsterHealth.TakeDamage(10);
+            int damage = monsterHealth.CalculateDamage(playerStats, monsterStats);
+            monsterHealth.TakeDamage(damage);
             GenerateQuestion();
         }
         else
         {
             Health playerHealth = _player.GetComponent<Health>();
-            playerHealth.TakeDamage(10);
+            int damage = playerHealth.CalculateDamage(monsterStats, playerStats);
+            playerHealth.TakeDamage(damage);
 
             ClearInputField("Incorrect. Try again!");
             _answerInputField.ActivateInputField();
