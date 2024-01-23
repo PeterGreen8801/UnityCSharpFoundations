@@ -5949,6 +5949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902519398}
+  - component: {fileID: 1902519397}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5956,6 +5957,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1902519397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902519396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551c90bf04e6fc543b7ff5b0cd1f2ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 150
+  _healthBarUI: {fileID: 3019135285225397601}
+  maxHp: 150
 --- !u!4 &1902519398
 Transform:
   m_ObjectHideFlags: 0
