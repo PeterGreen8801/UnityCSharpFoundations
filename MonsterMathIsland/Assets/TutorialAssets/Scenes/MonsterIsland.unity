@@ -6005,7 +6005,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   baseMaxHp: 54
-  baseAttack: 10
+  baseAttack: 12
   baseDefense: 10
   maxHp: 0
   attack: 0
