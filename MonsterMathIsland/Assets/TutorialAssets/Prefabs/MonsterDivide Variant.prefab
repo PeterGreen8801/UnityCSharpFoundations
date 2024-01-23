@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterDivide Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3700693712920541114, guid: 33d500cd999aa164caf34551fc47935a, type: 3}
+      propertyPath: baseDefense
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6592213394019068358, guid: 33d500cd999aa164caf34551fc47935a, type: 3}
       propertyPath: level
       value: 6

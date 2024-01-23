@@ -6911,6 +6911,7 @@ GameObject:
   - component: {fileID: 2125828681}
   - component: {fileID: 2125828682}
   - component: {fileID: 2125828680}
+  - component: {fileID: 2125828683}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6973,6 +6974,24 @@ MonoBehaviour:
   waveDifficulty: 0
   _healthBarUI: {fileID: 2848795563805304708}
   _monsters: []
+--- !u!114 &2125828683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125828679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2856bc275d2e64581c534152d682f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeInSecs: 10
+  timerText: {fileID: 861534241}
+  onTimeElapsed:
+    m_PersistentCalls:
+      m_Calls: []
+  startOnAwake: 1
 --- !u!222 &1175700404763933144
 CanvasRenderer:
   m_ObjectHideFlags: 0

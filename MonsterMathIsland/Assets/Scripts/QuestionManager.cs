@@ -13,10 +13,21 @@ public class QuestionManager : MonoBehaviour
 
     [SerializeField] private float _answer;
     [SerializeField] private GameObject _player;
+    private Timer _timer;
 
     // Start is called before the first frame update
     void Start()
     {
+        _timer = GetComponent<Timer>();
+        _timer.onTimeElapsed.AddListener(TimerElapsed);
+        GenerateQuestion();
+    }
+
+    private void TimerElapsed()
+    {
+        Health playerHealth = _player.GetComponent<Health>();
+        int damage = playerHealth.CalculateDamage(_monsterManager._monsters[0].GetComponent<Stats>(), _player.GetComponent<Stats>());
+        playerHealth.TakeDamage(damage);
         GenerateQuestion();
     }
 
@@ -103,15 +114,12 @@ public class QuestionManager : MonoBehaviour
 
         if (_answerInputField.text == _answer.ToString())
         {
-            /*
-            _monsterManager.KillMonster(0);
-            _monsterManager.MonsterAttacks(0);
-            _monsterManager.MoveNextMonsterToQueue();
-            */
-
             Health monsterHealth = _monsterManager._monsters[0].GetComponent<Health>();
             int damage = monsterHealth.CalculateDamage(playerStats, monsterStats);
             monsterHealth.TakeDamage(damage);
+
+            _timer.StopTimer();
+            _timer.StartTimer();
             GenerateQuestion();
         }
         else
